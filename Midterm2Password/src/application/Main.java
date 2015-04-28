@@ -47,6 +47,24 @@ public class Main extends Application {
 				passwordbox.clear();
 			}
 		});
+		
+		passwordbox.setOnKeyPressed(new EventHandler<KeyEvent>()
+			    {
+			        @Override
+			        public void handle(KeyEvent ke)
+			        {
+			            if (ke.getCode().equals(KeyCode.ENTER))
+			            {
+							if (passwordbox.getText().equals("bugaboo")) {
+								label.setText("Your password is correct");
+							} else {
+								label.setText("Your password is incorrect");
+							}
+							passwordbox.clear();
+			            }
+			        }
+			    });
+
 
 		return vbox;
 
